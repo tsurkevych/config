@@ -1,0 +1,5 @@
+Host dev-epicentr
+HostName 10.27.1.104
+User curkevich
+Port 22
+IdentityFile ~/.ssh/authorized_keys
