@@ -3,3 +3,6 @@ Host dev-epicentr
 	User curkevich
 	Port 22
 	IdentityFile ~/.ssh//id_rsa
+Host bitrix
+	HostName myastoriya.com.ua
+	User bitrix
