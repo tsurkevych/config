@@ -1,8 +1,11 @@
-Host dev-epicentr
-	HostName 10.27.1.104
+
+Host dev
+	HostName 10.71.1.212
 	User curkevich
 	Port 22
-	IdentityFile ~/.ssh//id_rsa
-Host bitrix
-	HostName myastoriya.com.ua
-	User bitrix
+	IdentityFile ~/.ssh/id_rsa
+Host dev-2
+	HostName 172.16.0.21
+	User curkevich
+	Port 22
+	IdentityFile ~/.ssh/id_rsa
