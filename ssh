@@ -3,3 +3,8 @@ Host EPICENTRK-DEV
 	User curkevich
 	Port 22
 	IdentityFile ~/.ssh/id_rsa
+Host EPICENTRK-DEV-120
+	HostName 172.16.0.120
+	User curkevich
+	Port 22
+	IdentityFile ~/.ssh/id_rsa
