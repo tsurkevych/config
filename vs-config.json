@@ -1,0 +1,40 @@
+{
+	"explorer.compactFolders": false,
+	"explorer.confirmDragAndDrop": false,
+	"editor.wordWrap": "on",
+	"editor.insertSpaces": false,
+	"editor.renderWhitespace": "all",
+	"editor.suggestSelection": "first",
+	"editor.unicodeHighlight.ambiguousCharacters": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true,
+		"source.fixAll.eslint": true,
+		"source.fixAll.stylelint": true
+	},
+	"workbench.editor.tabSizing": "shrink",
+	"workbench.editor.untitled.hint": "hidden",
+	"workbench.editor.wrapTabs": true,
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.colorTheme": "Community Material Theme Palenight High Contrast",
+	"material-icon-theme.folders.color": "#42a5f5",
+	"material-icon-theme.activeIconPack": "vue_vuex",
+	"git.autofetch": true,
+	"git.confirmSync": false,
+	"git.enableSmartCommit": true,
+	"remote.SSH.configFile": "C:/config/ssh",
+	"remote.SSH.remotePlatform": {
+		"DEV-21": "linux",
+		"DEV-120": "linux"
+	},
+	"stylelint.validate": [
+		"css",
+		"scss",
+		"vue"
+	],
+	"window.zoomLevel": -1,
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"editor.formatOnPaste": false
+}
