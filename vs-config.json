@@ -1,40 +1,35 @@
 {
-	"explorer.compactFolders": false,
-	"explorer.confirmDragAndDrop": false,
-	"editor.wordWrap": "on",
-	"editor.insertSpaces": false,
+	"window.zoomLevel": -1,
 	"editor.renderWhitespace": "all",
-	"editor.suggestSelection": "first",
-	"editor.unicodeHighlight.ambiguousCharacters": false,
+	"editor.formatOnPaste": false,
+	"editor.wordWrap": "on",
+	"editor.foldingStrategy": "indentation",
 	"editor.codeActionsOnSave": {
-		"source.fixAll": true,
-		"source.fixAll.eslint": true,
-		"source.fixAll.stylelint": true
+		"source.fixAll": "explicit",
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.stylelint": "explicit"
 	},
+	"explorer.compactFolders": false,
 	"workbench.editor.tabSizing": "shrink",
-	"workbench.editor.untitled.hint": "hidden",
 	"workbench.editor.wrapTabs": true,
-	"terminal.integrated.defaultProfile.windows": "Git Bash",
-	"workbench.iconTheme": "material-icon-theme",
-	"workbench.colorTheme": "Community Material Theme Palenight High Contrast",
-	"material-icon-theme.folders.color": "#42a5f5",
-	"material-icon-theme.activeIconPack": "vue_vuex",
 	"git.autofetch": true,
 	"git.confirmSync": false,
 	"git.enableSmartCommit": true,
-	"remote.SSH.configFile": "C:/config/ssh",
-	"remote.SSH.remotePlatform": {
-		"DEV-21": "linux",
-		"DEV-120": "linux"
-	},
+	"vetur.format.options.useTabs": true,
 	"stylelint.validate": [
 		"css",
 		"scss",
 		"vue"
 	],
-	"window.zoomLevel": -1,
-	"[json]": {
-		"editor.defaultFormatter": "vscode.json-language-features"
-	},
-	"editor.formatOnPaste": false
+
+	"workbench.colorTheme": "Material Theme Palenight High Contrast",
+	"workbench.iconTheme": "material-icon-theme",
+	"material-icon-theme.folders.color": "#42a5f5",
+	"material-icon-theme.activeIconPack": "vue_vuex",
+
+	"remote.SSH.configFile": "/Users/petrotsurkevych/work/config/ssh",
+	"remote.SSH.remotePlatform": {
+		"EPICENTRK-DEV": "linux",
+		"EPICENTRK-DEV-120": "linux"
+	}
 }

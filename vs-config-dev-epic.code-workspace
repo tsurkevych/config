@@ -1,0 +1,262 @@
+{
+	"folders": [
+		{
+			"name": "NUXTJS",
+			"path": "nuxt"
+		},
+		{
+			"name": "NUXT3",
+			"path": "server-side"
+		},
+		{
+			"name": "EPICENTRK_FRONT",
+			"path": "27ua/resources"
+		},
+		{
+			"name": "EPICENTRK",
+			"path": "27ua"
+		},
+		{
+			"name": "WIDGET",
+			"path": "crm-widget"
+		},
+		{
+			"name": "API",
+			"path": "api"
+		},
+		{
+			"name": "NOVA",
+			"path": "nova"
+		},
+		{
+			"name": "EPORTAL",
+			"path": "eportalcomua"
+		},
+		{
+			"name": "B2B",
+			"path": "b24"
+		},
+		{
+			"name": "B2B_FRONT",
+			"path": "b24/client/b2bcabinet/resources"
+		},
+		{
+			"name": "___SUBMODULE_NUXT_WIDGET",
+			"path": "crm-widget/nuxt"
+		},
+		{
+			"name": "___SUBMODULE_BITRIX_EPICENTRK",
+			"path": "27ua/bitrix"
+		},
+		{
+			"name": "___SUBMODULE_BITRIX_EPORTAL",
+			"path": "eportalcomua/bitrix"
+		},
+		{
+			"name": "___SUBMODULE_BITRIX_B2B",
+			"path": "b24/bitrix"
+		}
+	],
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			// dev
+			{
+				"label": "NUXT: dev",
+				"type": "shell",
+				"command": "cd ~/public_html/nuxt/ && npm run dev",
+				"problemMatcher": []
+			},
+			{
+				"label": "27ua: dev",
+				"type": "shell",
+				"command": "cd ~/public_html/27ua/resources/ && npm run dev",
+				"problemMatcher": []
+			},
+			{
+				"label": "EPORTAL: dev",
+				"type": "shell",
+				"command": "cd ~/public_html/eportalcomua/ && npm run dev",
+				"problemMatcher": []
+			},
+			// other
+			{
+				"label": "alias",
+				"type": "shell",
+				"command": "source ~/.bashrc"
+			},
+			{
+				"label": "SSH: connect",
+				"type": "shell",
+				"command": "ssh -i z:/.ssh/id_rsa curkevich@172.16.0.21 -p 22"
+			},
+			{
+				"label": "NUXT: socket",
+				"type": "shell",
+				"command": "cd ~/public_html/nuxt/ && chmod 777 nuxt.socket",
+				"problemMatcher": []
+			},
+			{
+				"label": "NUXT: kill port",
+				"type": "shell",
+				"command": "cd ~/public_html/nuxt/ && kill -9 `lsof -t -i:4001`",
+				"problemMatcher": []
+			},
+			{
+				"label": "NUXT: git merge mobile-staging",
+				"type": "shell",
+				"command": "cd ~/public_html/nuxt/ && git checkout mobile-staging && git reset --hard main && git push -f",
+				"problemMatcher": []
+			},
+			{
+				"label": "NUXT: git merge staging",
+				"type": "shell",
+				"command": "cd ~/public_html/nuxt/ && git checkout staging && git reset --hard main && git push -f",
+				"problemMatcher": []
+			},
+			{
+				"label": "NUXT: git merge web-01",
+				"type": "shell",
+				"command": "cd ~/public_html/nuxt/ && git checkout web-01 && git reset --hard main && git push -f",
+				"problemMatcher": []
+			},
+			{
+				"label": "NUXT: git merge web-02",
+				"type": "shell",
+				"command": "cd ~/public_html/nuxt/ && git checkout web-02 && git reset --hard main && git push -f",
+				"problemMatcher": []
+			},
+			{
+				"label": "NUXT: git merge web-03",
+				"type": "shell",
+				"command": "cd ~/public_html/nuxt/ && git checkout web-03 && git reset --hard main && git push -f",
+				"problemMatcher": []
+			},
+			{
+				"label": "NUXT: git merge web-04",
+				"type": "shell",
+				"command": "cd ~/public_html/nuxt/ && git checkout web-04 && git reset --hard main && git push -f",
+				"problemMatcher": []
+			},
+			{
+				"label": "NUXT: git merge web-05",
+				"type": "shell",
+				"command": "cd ~/public_html/nuxt/ && git checkout web-05 && git reset --hard main && git push -f",
+				"problemMatcher": []
+			},
+			{
+				"label": "NUXT: git merge marketing-01",
+				"type": "shell",
+				"command": "cd ~/public_html/nuxt/ && git checkout marketing-01 && git reset --hard main && git push -f",
+				"problemMatcher": []
+			},
+			{
+				"label": "NUXT: git merge acrm-01",
+				"type": "shell",
+				"command": "cd ~/public_html/nuxt/ && git checkout acrm-01 && git reset --hard main && git push -f",
+				"problemMatcher": []
+			},
+			{
+				"label": "27UA: submodule status",
+				"type": "shell",
+				"command": "cd ~/public_html/27ua/ && git submodule status"
+			},
+			{
+				"label": "27UA: submodule update",
+				"type": "shell",
+				"command": "cd ~/public_html/27ua/ && git submodule update"
+			},
+			{
+				"label": "27UA: front build",
+				"type": "shell",
+				"command": "cd ~/public_html/27ua/ && bash ./front.sh build"
+			},
+			{
+				"label": "27UA: front dev",
+				"type": "shell",
+				"command": "cd ~/public_html/27ua/ && bash ./front.sh dev"
+			},
+			{
+				"label": "27UA: composer update",
+				"type": "shell",
+				"command": "cd ~/public_html/27ua/ && php ../composer.phar update"
+			},
+			{
+				"label": "API: update",
+				"type": "shell",
+				"command": "cd ~/public_html/api/ && php ../composer.phar update && php artisan optimize && php artisan l5-swagger:generate",
+				"problemMatcher": []
+			},
+			{
+				"label": "API: redis clear",
+				"type": "shell",
+				"command": "cd ~/public_html/api/ && redis-cli flushall",
+				"problemMatcher": []
+			},
+			{
+				"label": "API: composer update",
+				"type": "shell",
+				"command": "cd ~/public_html/api/ && php ../composer.phar update",
+				"problemMatcher": []
+			},
+			{
+				"label": "API: artisan jwt:secret",
+				"type": "shell",
+				"command": "cd ~/public_html/api/ && php artisan jwt:secret"
+			},
+			{
+				"label": "API: artisan l5-swagger:generate",
+				"type": "shell",
+				"command": "cd ~/public_html/api/ && php artisan l5-swagger:generate"
+			},
+			{
+				"label": "NOVA: composer update",
+				"type": "shell",
+				"command": "cd ~/public_html/nova/ && php ../composer.phar update"
+			},
+			{
+				"label": "EPORTAL: submodule status",
+				"type": "shell",
+				"command": "cd ~/public_html/eportalcomua/ && git submodule status"
+			},
+			{
+				"label": "EPORTAL: submodule update",
+				"type": "shell",
+				"command": "cd ~/public_html/eportalcomua/ && git submodule update"
+			},
+			{
+				"label": "EPORTAL: composer update",
+				"type": "shell",
+				"command": "cd ~/public_html/eportalcomua/ && php ../composer.phar update"
+			},
+			{
+				"label": "WIGET: submodule update",
+				"type": "shell",
+				"command": "cd ~/public_html/crm-widget/ && git submodule update"
+			},
+			{
+				"label": "KILL ALL",
+				"type": "shell",
+				"command": "pgrep -U curkevich|xargs kill -9"
+			}
+		]
+	},
+	"settings": {
+		"editor.renderWhitespace": "all",
+		"editor.formatOnPaste": false,
+		"editor.foldingStrategy": "indentation",
+		"editor.codeActionsOnSave": {
+			"source.fixAll": "explicit",
+			"source.fixAll.eslint": "explicit",
+			"source.fixAll.stylelint": "explicit"
+		},
+		"workbench.editor.tabSizing": "shrink",
+		"workbench.editor.wrapTabs": true,
+		"vetur.format.options.useTabs": true,
+		"stylelint.validate": [
+			"css",
+			"scss",
+			"vue"
+		]
+	}
+}
