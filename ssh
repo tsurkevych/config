@@ -1,10 +1,10 @@
-Host DEV-21
+Host DEV-01
 	HostName 172.16.0.21
 	User curkevich
 	Port 22
-	IdentityFile ~/.ssh/id_rsa
-Host DEV-120
-	HostName 172.16.0.120
+	IdentityFile ~/.ssh/id_ed25519
+Host DEV-03
+	HostName 172.16.0.219
 	User curkevich
 	Port 22
-	IdentityFile ~/.ssh/id_rsa
+	IdentityFile ~/.ssh/id_ed25519
