@@ -1,8 +1,3 @@
-Host DEV-01
-	HostName 172.16.0.21
-	User curkevich
-	Port 22
-	IdentityFile ~/.ssh/id_ed25519
 Host DEV-03
 	HostName 172.16.0.219
 	User curkevich
