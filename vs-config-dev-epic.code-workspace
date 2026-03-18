@@ -1,262 +1,285 @@
 {
 	"folders": [
 		{
-			"name": "NUXTJS",
-			"path": "nuxt"
+			"name": "NUXT",
+			"path": "public_html/nuxt"
+		},
+		/* {
+			"name": "NUXT_GIT",
+			"path": "public_html/nuxt/.git"
+		}, */
+		{
+			"name": "NUXT_WEB",
+			"path": "public_html/nuxt-web"
 		},
 		{
-			"name": "NUXT3",
-			"path": "server-side"
+			"name": "BITRIX_FRONT",
+			"path": "public_html/27ua/resources"
 		},
 		{
-			"name": "EPICENTRK_FRONT",
-			"path": "27ua/resources"
-		},
-		{
-			"name": "EPICENTRK",
-			"path": "27ua"
-		},
-		{
-			"name": "WIDGET",
-			"path": "crm-widget"
+			"name": "BITRIX",
+			"path": "public_html/27ua"
 		},
 		{
 			"name": "API",
-			"path": "api"
+			"path": "public_html/api"
 		},
-		{
+		/* {
 			"name": "NOVA",
-			"path": "nova"
-		},
-		{
+			"path": "public_html/nova"
+		}, */
+		/* {
 			"name": "EPORTAL",
-			"path": "eportalcomua"
-		},
-		{
+			"path": "public_html/eportalcomua"
+		}, */
+		/* {
 			"name": "B2B",
-			"path": "b24"
+			"path": "public_html/b24"
 		},
 		{
 			"name": "B2B_FRONT",
-			"path": "b24/client/b2bcabinet/resources"
+			"path": "public_html/b24/local/resource/"
 		},
 		{
-			"name": "___SUBMODULE_NUXT_WIDGET",
-			"path": "crm-widget/nuxt"
+			"name": "B2B_FRONT_CHECKOUT",
+			"path": "public_html/b24/client/b2bcabinet/resources/"
+		}, */
+		{
+			"name": "WIDGET",
+			"path": "public_html/nuxt-widget"
 		},
 		{
-			"name": "___SUBMODULE_BITRIX_EPICENTRK",
-			"path": "27ua/bitrix"
+			"name": "__BITRIX_CORE",
+			"path": "public_html/27ua/bitrix"
+		},
+		/* {
+			"name": "__EPORTAL_CORE",
+			"path": "public_html/eportalcomua/bitrix"
+		}, */
+		/* {
+			"name": "__B2B_CORE",
+			"path": "public_html/b24/bitrix"
+		}, */
+		{
+			"name": "__WIDGET_CORE",
+			"path": "public_html/nuxt-widget/nuxt"
 		},
 		{
-			"name": "___SUBMODULE_BITRIX_EPORTAL",
-			"path": "eportalcomua/bitrix"
+			"name": "__WIDGET_BUNDLE",
+			"path": "public_html/nuxt-widget/nuxt-widget-bundle"
 		},
-		{
-			"name": "___SUBMODULE_BITRIX_B2B",
-			"path": "b24/bitrix"
-		}
+		/* {
+			"name": "SERVER_SIDE",
+			"path": "public_html/server-side"
+		}, */
+		/* {
+			"name": "⚙️ DEV_SERVER",
+			"path": ".dev/"
+		} */
 	],
 	"tasks": {
 		"version": "2.0.0",
 		"tasks": [
-			// dev
 			{
-				"label": "NUXT: dev",
-				"type": "shell",
-				"command": "cd ~/public_html/nuxt/ && npm run dev",
-				"problemMatcher": []
-			},
-			{
-				"label": "27ua: dev",
-				"type": "shell",
-				"command": "cd ~/public_html/27ua/resources/ && npm run dev",
-				"problemMatcher": []
-			},
-			{
-				"label": "EPORTAL: dev",
-				"type": "shell",
-				"command": "cd ~/public_html/eportalcomua/ && npm run dev",
-				"problemMatcher": []
-			},
-			// other
-			{
-				"label": "alias",
+				"label": "bashrc: update",
 				"type": "shell",
 				"command": "source ~/.bashrc"
 			},
 			{
-				"label": "SSH: connect",
+				"label": "ALL: UPDATE",
 				"type": "shell",
-				"command": "ssh -i z:/.ssh/id_rsa curkevich@172.16.0.21 -p 22"
+				"command": "devtool api composer update; devtool api php artisan optimize; devtool api php artisan l5-swagger:generate; devtool redis flushdb; devtool api php artisan clear:redis option; devtool api php artisan clear:local-cache; devtool bitrix composer update; devtool bitrix git submodule update; devtool eportal composer update; devtool eportal git submodule update; devtool b2b composer install -v -d /var/www/html/local/php_interface/include/lib/composer/; devtool nova composer update; devtool nova php artisan optimize; "
+			},
+			// devtool
+			{
+				"label": "devtool: UP",
+				"type": "shell",
+				"command": "devtool up"
 			},
 			{
-				"label": "NUXT: socket",
+				"label": "devtool: DOWN",
 				"type": "shell",
-				"command": "cd ~/public_html/nuxt/ && chmod 777 nuxt.socket",
-				"problemMatcher": []
+				"command": "devtool down"
 			},
 			{
-				"label": "NUXT: kill port",
+				"label": "devtool: RESTART",
 				"type": "shell",
-				"command": "cd ~/public_html/nuxt/ && kill -9 `lsof -t -i:4001`",
-				"problemMatcher": []
+				"command": "devtool down; devtool up"
+			},
+			// NUXT
+			{
+				"label": "NUXT: DEV",
+				"type": "shell",
+				"command": "devtool nuxt npm run dev"
 			},
 			{
-				"label": "NUXT: git merge mobile-staging",
+				"label": "NUXT: BUILD",
 				"type": "shell",
-				"command": "cd ~/public_html/nuxt/ && git checkout mobile-staging && git reset --hard main && git push -f",
-				"problemMatcher": []
+				"command": "devtool nuxt npm run build"
 			},
 			{
-				"label": "NUXT: git merge staging",
+				"label": "NUXT: START",
 				"type": "shell",
-				"command": "cd ~/public_html/nuxt/ && git checkout staging && git reset --hard main && git push -f",
-				"problemMatcher": []
+				"command": "devtool nuxt npm run start"
 			},
 			{
-				"label": "NUXT: git merge web-01",
+				"label": "NUXT: RUN",
 				"type": "shell",
-				"command": "cd ~/public_html/nuxt/ && git checkout web-01 && git reset --hard main && git push -f",
-				"problemMatcher": []
+				"command": "devtool nuxt npm run build; devtool nuxt npm run start"
 			},
 			{
-				"label": "NUXT: git merge web-02",
+				"label": "NUXT: START UPDATE",
 				"type": "shell",
-				"command": "cd ~/public_html/nuxt/ && git checkout web-02 && git reset --hard main && git push -f",
-				"problemMatcher": []
+				"command": "devtool nuxt npm run build; devtool nuxt npm run start"
 			},
 			{
-				"label": "NUXT: git merge web-03",
+				"label": "NUXT: CLEAR BUILD",
 				"type": "shell",
-				"command": "cd ~/public_html/nuxt/ && git checkout web-03 && git reset --hard main && git push -f",
-				"problemMatcher": []
+				"command": "cd ~/public_html/nuxt/; rm -rf .nuxt"
 			},
 			{
-				"label": "NUXT: git merge web-04",
+				"label": "NUXT: LOG",
 				"type": "shell",
-				"command": "cd ~/public_html/nuxt/ && git checkout web-04 && git reset --hard main && git push -f",
-				"problemMatcher": []
+				"command": "devtool nuxt log"
 			},
 			{
-				"label": "NUXT: git merge web-05",
+				"label": "NUXT: DEPLOY STAGING",
 				"type": "shell",
-				"command": "cd ~/public_html/nuxt/ && git checkout web-05 && git reset --hard main && git push -f",
-				"problemMatcher": []
+				"command": "cd ~/public_html/nuxt/ && git checkout web-02 && git reset --hard main && git push origin HEAD --force"
 			},
 			{
-				"label": "NUXT: git merge marketing-01",
+				"label": "NUXT: UPDATE IMAGE",
 				"type": "shell",
-				"command": "cd ~/public_html/nuxt/ && git checkout marketing-01 && git reset --hard main && git push -f",
-				"problemMatcher": []
+				"command": "cd ~/public_html/nuxt/; DOCKER_BUILDKIT=1 docker build --target base -t registry.27zxc.com/root/nuxt:dev --push --no-cache ."
+			},
+			// NUXT-WEB
+			{
+				"label": "NUXT-WEB: DEV",
+				"type": "shell",
+				"command": "cd ~/public_html/nuxt-web/; rm -rf .nuxt .output; devtool nuxt-web npm run dev"
 			},
 			{
-				"label": "NUXT: git merge acrm-01",
+				"label": "NUXT-WEB: BUILD",
 				"type": "shell",
-				"command": "cd ~/public_html/nuxt/ && git checkout acrm-01 && git reset --hard main && git push -f",
-				"problemMatcher": []
+				"command": "devtool nuxt npm run build"
 			},
 			{
-				"label": "27UA: submodule status",
+				"label": "NUXT-WEB: START",
 				"type": "shell",
-				"command": "cd ~/public_html/27ua/ && git submodule status"
+				"command": "devtool nuxt npm run start"
 			},
 			{
-				"label": "27UA: submodule update",
+				"label": "NUXT-WEB: RUN",
 				"type": "shell",
-				"command": "cd ~/public_html/27ua/ && git submodule update"
+				"command": "devtool nuxt-web npm run build; devtool nuxt-web npm run preview"
 			},
 			{
-				"label": "27UA: front build",
+				"label": "NUXT-WEB: CLEAR BUILD",
 				"type": "shell",
-				"command": "cd ~/public_html/27ua/ && bash ./front.sh build"
+				"command": "cd ~/public_html/nuxt-web/; rm -rf .nuxt .output"
+			},
+			// API
+			{
+				"label": "API: COMPOSER INSTALL",
+				"type": "shell",
+				"command": "devtool api composer install -v"
 			},
 			{
-				"label": "27UA: front dev",
+				"label": "API: COMPOSER UPDATE",
 				"type": "shell",
-				"command": "cd ~/public_html/27ua/ && bash ./front.sh dev"
+				"command": "devtool api composer update"
 			},
 			{
-				"label": "27UA: composer update",
+				"label": "API: ARTISAN OPTIMIZE",
 				"type": "shell",
-				"command": "cd ~/public_html/27ua/ && php ../composer.phar update"
+				"command": "devtool api php artisan optimize"
 			},
 			{
-				"label": "API: update",
+				"label": "API: SWAGGER",
 				"type": "shell",
-				"command": "cd ~/public_html/api/ && php ../composer.phar update && php artisan optimize && php artisan l5-swagger:generate",
-				"problemMatcher": []
+				"command": "devtool api php artisan l5-swagger:generate"
 			},
 			{
-				"label": "API: redis clear",
+				"label": "API: CLEAR CACHE",
 				"type": "shell",
-				"command": "cd ~/public_html/api/ && redis-cli flushall",
-				"problemMatcher": []
+				"command": "devtool redis flushdb; devtool api php artisan clear:redis option; devtool api php artisan clear:local-cache"
 			},
 			{
-				"label": "API: composer update",
+				"label": "API: UPDATE ALL",
 				"type": "shell",
-				"command": "cd ~/public_html/api/ && php ../composer.phar update",
-				"problemMatcher": []
+				"command": "devtool api composer update; devtool api php artisan optimize; devtool api php artisan l5-swagger:generate; devtool redis flushdb; devtool api php artisan clear:redis option; devtool api php artisan clear:local-cache"
+			},
+			// bitrix
+			{
+				"label": "BITRIX: COMPOSER INSTALL",
+				"type": "shell",
+				"command": "devtool bitrix composer install -v"
 			},
 			{
-				"label": "API: artisan jwt:secret",
+				"label": "BITRIX: COMPOSER UPDATE",
 				"type": "shell",
-				"command": "cd ~/public_html/api/ && php artisan jwt:secret"
+				"command": "devtool bitrix composer update"
 			},
 			{
-				"label": "API: artisan l5-swagger:generate",
+				"label": "BITRIX: SUBMODULE UPDATE",
 				"type": "shell",
-				"command": "cd ~/public_html/api/ && php artisan l5-swagger:generate"
+				"command": "devtool bitrix git submodule update"
+			},
+			// eportal
+			{
+				"label": "EPORTAL: COMPOSER INSTALL",
+				"type": "shell",
+				"command": "devtool eportal composer install -v"
 			},
 			{
-				"label": "NOVA: composer update",
+				"label": "EPORTAL: COMPOSER UPDATE",
 				"type": "shell",
-				"command": "cd ~/public_html/nova/ && php ../composer.phar update"
+				"command": "devtool eportal composer update"
 			},
 			{
-				"label": "EPORTAL: submodule status",
+				"label": "EPORTAL: SUBMODULE UPDATE",
 				"type": "shell",
-				"command": "cd ~/public_html/eportalcomua/ && git submodule status"
+				"command": "devtool eportal git submodule update"
+			},
+			// b2b
+			{
+				"label": "B2B: SUBMODULE UPDATE",
+				"type": "shell",
+				"command": "devtool b2b git submodule update"
 			},
 			{
-				"label": "EPORTAL: submodule update",
+				"label": "B2B: COMPOSER UPDATE",
 				"type": "shell",
-				"command": "cd ~/public_html/eportalcomua/ && git submodule update"
+				"command": "devtool b2b composer install -v -d /var/www/html/local/php_interface/include/lib/composer/"
+			},
+			// nova
+			{
+				"label": "NOVA: COMPOSER INSTALL",
+				"type": "shell",
+				"command": "devtool nova composer install -v"
 			},
 			{
-				"label": "EPORTAL: composer update",
+				"label": "NOVA: COMPOSER UPDATE",
 				"type": "shell",
-				"command": "cd ~/public_html/eportalcomua/ && php ../composer.phar update"
+				"command": "devtool nova composer update"
 			},
 			{
-				"label": "WIGET: submodule update",
+				"label": "NOVA: ARTISAN OPTIMIZE",
 				"type": "shell",
-				"command": "cd ~/public_html/crm-widget/ && git submodule update"
+				"command": "devtool nova php artisan optimize"
 			},
+			// widget
 			{
-				"label": "KILL ALL",
+				"label": "WIDGET: SUBMODULE UPDATE",
 				"type": "shell",
-				"command": "pgrep -U curkevich|xargs kill -9"
-			}
+				"command": "cd ~/public_html/nuxt-widget/; git submodule update "
+			},
 		]
 	},
 	"settings": {
-		"editor.renderWhitespace": "all",
-		"editor.formatOnPaste": false,
-		"editor.foldingStrategy": "indentation",
-		"editor.codeActionsOnSave": {
-			"source.fixAll": "explicit",
-			"source.fixAll.eslint": "explicit",
-			"source.fixAll.stylelint": "explicit"
-		},
-		"workbench.editor.tabSizing": "shrink",
-		"workbench.editor.wrapTabs": true,
-		"vetur.format.options.useTabs": true,
-		"stylelint.validate": [
-			"css",
-			"scss",
-			"vue"
+		"cSpell.words": [
+			"nuxt",
+			"vueuse"
 		]
 	}
 }

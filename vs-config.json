@@ -2,34 +2,90 @@
 	"window.zoomLevel": -1,
 	"editor.renderWhitespace": "all",
 	"editor.formatOnPaste": false,
-	"editor.wordWrap": "on",
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": true,
 	"editor.foldingStrategy": "indentation",
+	"editor.wordWrap": "on",
 	"editor.codeActionsOnSave": {
-		"source.fixAll": "explicit",
 		"source.fixAll.eslint": "explicit",
-		"source.fixAll.stylelint": "explicit"
+		"source.fixAll.stylelint": "explicit",
 	},
-	"explorer.compactFolders": false,
 	"workbench.editor.tabSizing": "shrink",
 	"workbench.editor.wrapTabs": true,
+	"workbench.productIconTheme": "material-product-icons",
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.editorAssociations": {
+		"*.svg": "default"
+	},
+	"explorer.compactFolders": false,
+	"vue.inlayHints.destructuredProps": true,
+	"vue.inlayHints.inlineHandlerLeading": true,
+	"vue.autoInsert.dotValue": true,
+	"yaml.disableAdditionalProperties": true,
+	"svg.preview.mode": "svg",
 	"git.autofetch": true,
 	"git.confirmSync": false,
 	"git.enableSmartCommit": true,
-	"vetur.format.options.useTabs": true,
+	"git.ignoreRebaseWarning": true,
 	"stylelint.validate": [
 		"css",
 		"scss",
 		"vue"
 	],
-
-	"workbench.colorTheme": "Material Theme Palenight High Contrast",
-	"workbench.iconTheme": "material-icon-theme",
 	"material-icon-theme.folders.color": "#42a5f5",
 	"material-icon-theme.activeIconPack": "vue_vuex",
-
-	"remote.SSH.configFile": "/Users/petrotsurkevych/work/config/ssh",
-	"remote.SSH.remotePlatform": {
-		"EPICENTRK-DEV": "linux",
-		"EPICENTRK-DEV-120": "linux"
+	"cSpell.language": "en,uk,ru-RU",
+	"remote.SSH.configFile": "/Users/tsurkevych/work/config/ssh",
+	"prettier.singleQuote": true,
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": true,
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[vue]": {
+		"editor.defaultFormatter": "Vue.volar"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"github.copilot.nextEditSuggestions.enabled": true,
+	"chat.instructionsFilesLocations": {
+		".github/instructions": true,
+		".claude/rules": true,
+		"~/.copilot/instructions": true,
+		"~/.claude/rules": true,
+		"/tmp/postman-collections-post-response.instructions.md": true,
+		"/tmp/postman-collections-pre-request.instructions.md": true,
+		"/tmp/postman-folder-post-response.instructions.md": true,
+		"/tmp/postman-folder-pre-request.instructions.md": true,
+		"/tmp/postman-http-request-post-response.instructions.md": true,
+		"/tmp/postman-http-request-pre-request.instructions.md": true,
+		"/var/folders/nb/qpqj55n1201399xm3p0sj5840000gp/T/postman-collections-post-response.instructions.md": true,
+		"/var/folders/nb/qpqj55n1201399xm3p0sj5840000gp/T/postman-collections-pre-request.instructions.md": true,
+		"/var/folders/nb/qpqj55n1201399xm3p0sj5840000gp/T/postman-folder-post-response.instructions.md": true,
+		"/var/folders/nb/qpqj55n1201399xm3p0sj5840000gp/T/postman-folder-pre-request.instructions.md": true,
+		"/var/folders/nb/qpqj55n1201399xm3p0sj5840000gp/T/postman-http-request-post-response.instructions.md": true,
+		"/var/folders/nb/qpqj55n1201399xm3p0sj5840000gp/T/postman-http-request-pre-request.instructions.md": true
+	},
+	"gitlens.ai.model": "vscode",
+	"gitlens.ai.vscode.model": "copilot:gpt-4.1",
+	"github.copilot.chat.agent.autoFix": true,
+	"github.copilot.enable": {
+		"*": true,
+		"plaintext": false,
+		"markdown": false,
+		"scminput": false
 	}
 }
