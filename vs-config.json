@@ -8,7 +8,7 @@
 	"editor.wordWrap": "on",
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit",
-		"source.fixAll.stylelint": "explicit",
+		"source.fixAll.stylelint": "explicit"
 	},
 	"workbench.editor.tabSizing": "shrink",
 	"workbench.editor.wrapTabs": true,
@@ -59,25 +59,6 @@
 	},
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"github.copilot.nextEditSuggestions.enabled": true,
-	"chat.instructionsFilesLocations": {
-		".github/instructions": true,
-		".claude/rules": true,
-		"~/.copilot/instructions": true,
-		"~/.claude/rules": true,
-		"/tmp/postman-collections-post-response.instructions.md": true,
-		"/tmp/postman-collections-pre-request.instructions.md": true,
-		"/tmp/postman-folder-post-response.instructions.md": true,
-		"/tmp/postman-folder-pre-request.instructions.md": true,
-		"/tmp/postman-http-request-post-response.instructions.md": true,
-		"/tmp/postman-http-request-pre-request.instructions.md": true,
-		"/var/folders/nb/qpqj55n1201399xm3p0sj5840000gp/T/postman-collections-post-response.instructions.md": true,
-		"/var/folders/nb/qpqj55n1201399xm3p0sj5840000gp/T/postman-collections-pre-request.instructions.md": true,
-		"/var/folders/nb/qpqj55n1201399xm3p0sj5840000gp/T/postman-folder-post-response.instructions.md": true,
-		"/var/folders/nb/qpqj55n1201399xm3p0sj5840000gp/T/postman-folder-pre-request.instructions.md": true,
-		"/var/folders/nb/qpqj55n1201399xm3p0sj5840000gp/T/postman-http-request-post-response.instructions.md": true,
-		"/var/folders/nb/qpqj55n1201399xm3p0sj5840000gp/T/postman-http-request-pre-request.instructions.md": true
 	},
 	"gitlens.ai.model": "vscode",
 	"gitlens.ai.vscode.model": "copilot:gpt-4.1",
