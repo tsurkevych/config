@@ -12,8 +12,10 @@
 	},
 	"workbench.editor.tabSizing": "shrink",
 	"workbench.editor.wrapTabs": true,
+	"workbench.colorTheme": "Dark Modern",
 	"workbench.productIconTheme": "material-product-icons",
 	"workbench.iconTheme": "material-icon-theme",
+	"workbench.experimental.modernUI": true,
 	"workbench.editorAssociations": {
 		"*.svg": "default"
 	},
@@ -52,7 +54,7 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[html]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "vscode.html-language-features"
 	},
 	"[jsonc]": {
 		"editor.defaultFormatter": "vscode.json-language-features"
@@ -60,13 +62,8 @@
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"gitlens.ai.model": "vscode",
-	"gitlens.ai.vscode.model": "copilot:gpt-4.1",
-	"github.copilot.chat.agent.autoFix": true,
-	"github.copilot.enable": {
-		"*": true,
-		"plaintext": false,
-		"markdown": false,
-		"scminput": false
-	}
+	"terminal.integrated.initialHint": false,
+	"claudeCode.preferredLocation": "panel",
+	"gitlab.duoCodeSuggestions.enabled": false,
+	"chat.disableAIFeatures": true
 }

@@ -5,6 +5,10 @@
 			"path": "public_html/nuxt"
 		},
 		/* {
+			"name": "NUXT.WIKI",
+			"path": "public_html/nuxt.wiki"
+		}, */
+		/* {
 			"name": "NUXT_GIT",
 			"path": "public_html/nuxt/.git"
 		}, */
@@ -13,16 +17,20 @@
 			"path": "public_html/nuxt-web"
 		},
 		{
-			"name": "BITRIX_FRONT",
-			"path": "public_html/27ua/resources"
+			"name": "API",
+			"path": "public_html/api"
 		},
 		{
 			"name": "BITRIX",
 			"path": "public_html/27ua"
 		},
 		{
-			"name": "API",
-			"path": "public_html/api"
+			"name": "BITRIX_FRONT",
+			"path": "public_html/27ua/resources"
+		},
+		{
+			"name": "__BITRIX_CORE",
+			"path": "public_html/27ua/bitrix"
 		},
 		/* {
 			"name": "NOVA",
@@ -31,8 +39,12 @@
 		/* {
 			"name": "EPORTAL",
 			"path": "public_html/eportalcomua"
+		},
+		{
+			"name": "__EPORTAL_CORE",
+			"path": "public_html/eportalcomua/bitrix"
 		}, */
-		/* {
+		{
 			"name": "B2B",
 			"path": "public_html/b24"
 		},
@@ -43,23 +55,15 @@
 		{
 			"name": "B2B_FRONT_CHECKOUT",
 			"path": "public_html/b24/client/b2bcabinet/resources/"
-		}, */
+		},
 		{
+			"name": "__B2B_CORE",
+			"path": "public_html/b24/bitrix"
+		},
+		/* {
 			"name": "WIDGET",
 			"path": "public_html/nuxt-widget"
 		},
-		{
-			"name": "__BITRIX_CORE",
-			"path": "public_html/27ua/bitrix"
-		},
-		/* {
-			"name": "__EPORTAL_CORE",
-			"path": "public_html/eportalcomua/bitrix"
-		}, */
-		/* {
-			"name": "__B2B_CORE",
-			"path": "public_html/b24/bitrix"
-		}, */
 		{
 			"name": "__WIDGET_CORE",
 			"path": "public_html/nuxt-widget/nuxt"
@@ -67,7 +71,7 @@
 		{
 			"name": "__WIDGET_BUNDLE",
 			"path": "public_html/nuxt-widget/nuxt-widget-bundle"
-		},
+		}, */
 		/* {
 			"name": "SERVER_SIDE",
 			"path": "public_html/server-side"
@@ -75,6 +79,10 @@
 		/* {
 			"name": "⚙️ DEV_SERVER",
 			"path": ".dev/"
+		}, */
+		/* {
+			"name": "⚙️ ALL",
+			"path": "."
 		} */
 	],
 	"tasks": {
@@ -86,9 +94,14 @@
 				"command": "source ~/.bashrc"
 			},
 			{
+				"label": "KILL ALL",
+				"type": "shell",
+				"command": "pkill -9 -u curkevich"
+			},
+			{
 				"label": "ALL: UPDATE",
 				"type": "shell",
-				"command": "devtool api composer update; devtool api php artisan optimize; devtool api php artisan l5-swagger:generate; devtool redis flushdb; devtool api php artisan clear:redis option; devtool api php artisan clear:local-cache; devtool bitrix composer update; devtool bitrix git submodule update; devtool eportal composer update; devtool eportal git submodule update; devtool b2b composer install -v -d /var/www/html/local/php_interface/include/lib/composer/; devtool nova composer update; devtool nova php artisan optimize; "
+				"command": "devtool api composer update; devtool api php artisan optimize; devtool api php artisan clear:redis all; devtool api php artisan l5-swagger:generate; devtool redis flushdb; devtool api php artisan clear:redis option; devtool api php artisan clear:local-cache; devtool api php artisan rout:clear; devtool bitrix composer update; devtool bitrix git submodule update; devtool eportal composer update; devtool eportal git submodule update; devtool b2b composer install -v -d /var/www/html/local/php_interface/include/lib/composer/; devtool nova composer update; devtool nova php artisan optimize; "
 			},
 			// devtool
 			{
@@ -107,6 +120,11 @@
 				"command": "devtool down; devtool up"
 			},
 			// NUXT
+			{
+				"label": "NUXT: UPD MODULES",
+				"type": "shell",
+				"command": "devtool nuxt-web npx npm-check-updates -u"
+			},
 			{
 				"label": "NUXT: DEV",
 				"type": "shell",
@@ -152,6 +170,11 @@
 				"type": "shell",
 				"command": "cd ~/public_html/nuxt/; DOCKER_BUILDKIT=1 docker build --target base -t registry.27zxc.com/root/nuxt:dev --push --no-cache ."
 			},
+			{
+				"label": "NUXT: OUTDATE",
+				"type": "shell",
+				"command": "cd ~/public_html/nuxt/; devtool nuxt npx npm-check-updates"
+			},
 			// NUXT-WEB
 			{
 				"label": "NUXT-WEB: DEV",
@@ -177,6 +200,11 @@
 				"label": "NUXT-WEB: CLEAR BUILD",
 				"type": "shell",
 				"command": "cd ~/public_html/nuxt-web/; rm -rf .nuxt .output"
+			},
+			{
+				"label": "NUXT-WEB: OUTDATE",
+				"type": "shell",
+				"command": "cd ~/public_html/nuxt-web/; devtool nuxt-web npx npm-check-updates"
 			},
 			// API
 			{
@@ -205,9 +233,14 @@
 				"command": "devtool redis flushdb; devtool api php artisan clear:redis option; devtool api php artisan clear:local-cache"
 			},
 			{
+				"label": "API: ROUTES",
+				"type": "shell",
+				"command": "devtool api php artisan route:list | grep favorite"
+			},
+			{
 				"label": "API: UPDATE ALL",
 				"type": "shell",
-				"command": "devtool api composer update; devtool api php artisan optimize; devtool api php artisan l5-swagger:generate; devtool redis flushdb; devtool api php artisan clear:redis option; devtool api php artisan clear:local-cache"
+				"command": "devtool api composer update; devtool api php artisan optimize; devtool api php artisan l5-swagger:generate; devtool redis flushdb; devtool api php artisan clear:redis option; devtool api php artisan clear:local-cache; devtool api php artisan rout:clear"
 			},
 			// bitrix
 			{
@@ -279,7 +312,13 @@
 	"settings": {
 		"cSpell.words": [
 			"nuxt",
-			"vueuse"
+			"vueuse",
+			"bcabinet",
+			"BITRIX",
+			"BUILDKIT",
+			"EPORTAL",
+			"eportalcomua",
+			"flushdb"
 		]
 	}
 }
