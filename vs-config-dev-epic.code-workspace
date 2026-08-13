@@ -83,6 +83,10 @@
 		/* {
 			"name": "⚙️ ALL",
 			"path": "."
+		}, */
+		/* {
+			"name": "⚙️ local-frontend",
+			"path": "public_html/local-frontend"
 		} */
 	],
 	"tasks": {
@@ -101,7 +105,7 @@
 			{
 				"label": "ALL: UPDATE",
 				"type": "shell",
-				"command": "devtool api composer update; devtool api php artisan optimize; devtool api php artisan clear:redis all; devtool api php artisan l5-swagger:generate; devtool redis flushdb; devtool api php artisan clear:redis option; devtool api php artisan clear:local-cache; devtool api php artisan rout:clear; devtool bitrix composer update; devtool bitrix git submodule update; devtool eportal composer update; devtool eportal git submodule update; devtool b2b composer install -v -d /var/www/html/local/php_interface/include/lib/composer/; devtool nova composer update; devtool nova php artisan optimize; "
+				"command": "devtool api composer update; devtool api php artisan optimize; devtool api php artisan optimize:clear; devtool api php artisan route:clear; devtool api php artisan clear:redis all; devtool api php artisan l5-swagger:generate; devtool redis flushdb; devtool api php artisan clear:redis option; devtool api php artisan clear:local-cache; devtool api php artisan rout:clear; devtool bitrix composer update; devtool bitrix git submodule update; devtool eportal composer update; devtool eportal git submodule update; devtool b2b composer install -v -d /var/www/html/local/php_interface/include/lib/composer/; devtool nova composer update; devtool nova php artisan optimize; "
 			},
 			// devtool
 			{
@@ -240,7 +244,7 @@
 			{
 				"label": "API: UPDATE ALL",
 				"type": "shell",
-				"command": "devtool api composer update; devtool api php artisan optimize; devtool api php artisan l5-swagger:generate; devtool redis flushdb; devtool api php artisan clear:redis option; devtool api php artisan clear:local-cache; devtool api php artisan rout:clear"
+				"command": "devtool api composer update;  devtool api php artisan optimize; devtool api php artisan optimize:clear; devtool api php artisan route:clear; devtool api php artisan l5-swagger:generate; devtool redis flushdb; devtool api php artisan clear:redis option; devtool api php artisan clear:local-cache; devtool api php artisan rout:clear"
 			},
 			// bitrix
 			{
@@ -311,14 +315,16 @@
 	},
 	"settings": {
 		"cSpell.words": [
-			"nuxt",
-			"vueuse",
 			"bcabinet",
+			"bitrix",
 			"BITRIX",
 			"BUILDKIT",
 			"EPORTAL",
 			"eportalcomua",
-			"flushdb"
+			"flushdb",
+			"nuxt",
+			"vueuse",
+			"bitrix"
 		]
 	}
 }
